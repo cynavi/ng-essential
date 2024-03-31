@@ -1,0 +1,30 @@
+<div class="todo-container centre-xy">
+  <mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Todo</mat-panel-title>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+
+    @for (todo of todos;track todo.id) {
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ todo.title }}
+            @if (todo.status === 'not started') {
+              <mat-chip style="background: #6f1a07" class="ml-2">{{ todo.status }}</mat-chip>
+            } @else if (todo.status === 'in progress') {
+              <mat-chip style="background: #E1B778" class="ml-2">{{ todo.status }}</mat-chip>
+            } @else if (todo.status === 'completed') {
+              <mat-chip style="background: #037971" class="ml-2">{{ todo.status }}</mat-chip>
+            }
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>{{ todo.details }}</p>
+        <button mat-stroked-button color="accent" class="mr-2">Update</button>
+        <button mat-stroked-button color="warn">Delete</button>
+      </mat-expansion-panel>
+    }
+
+  </mat-accordion>
+</div>

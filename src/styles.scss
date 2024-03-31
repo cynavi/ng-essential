@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: #212121;
+  color: white;
+}
+
+.green {
+  color: #037971 !important;
+}
+
+.pink {
+  color: #e31b6d !important;
+}
+
+.red {
+  color: #ec5453 !important;
+}
+
+.coffee {
+  color: #6f1a07 !important;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
