@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { Todo } from './todo';
-import { NgClass } from '@angular/common';
+import { NgClass, UpperCasePipe } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
+import { ReversePipe } from '../shared/util/reverse.pipe';
+import { ImpureDemoPipe } from '../shared/util/impure-demo.pipe';
 
 @Component({
   selector: 'app-todo',
@@ -13,7 +15,10 @@ import { MatChipsModule } from '@angular/material/chips';
     MatExpansionModule,
     NgClass,
     MatButtonModule,
-    MatChipsModule
+    MatChipsModule,
+    UpperCasePipe,
+    ReversePipe,
+    ImpureDemoPipe
   ],
   styleUrl: './todo.component.scss'
 })
@@ -39,4 +44,11 @@ export class TodoComponent {
       details: 'Need to learn NgRx'
     }
   ];
+
+  constructor() {
+    setTimeout(() => {
+      console.info('Updating todo...');
+      this.todos.forEach(t => t.title = `Updated ${t.title}`);
+    }, 2000);
+  }
 }
