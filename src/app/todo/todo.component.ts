@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { Todo } from './todo';
-import { NgClass, UpperCasePipe } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
-import { ReversePipe } from '../shared/util/reverse.pipe';
-import { ImpureDemoPipe } from '../shared/util/impure-demo.pipe';
 
 @Component({
   selector: 'app-todo',
@@ -16,9 +14,6 @@ import { ImpureDemoPipe } from '../shared/util/impure-demo.pipe';
     NgClass,
     MatButtonModule,
     MatChipsModule,
-    UpperCasePipe,
-    ReversePipe,
-    ImpureDemoPipe
   ],
   styleUrl: './todo.component.scss'
 })
